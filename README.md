@@ -1,0 +1,3 @@
+# FIFO
+
+It is trivial.
