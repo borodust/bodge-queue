@@ -1,3 +1,3 @@
-# FIFO
+# BODGE-QUEUE
 
 It is trivial.
