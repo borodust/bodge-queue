@@ -116,9 +116,12 @@
 
 
 (defun queue-length (queue)
-  (if (= (queue-head-idx queue) -1)
-      0
-      (- (queue-tail-idx queue) (queue-head-idx queue) -1)))
+  (let ((head-idx (queue-head-idx queue))
+        (tail-idx (queue-tail-idx queue)))
+    (cond
+      ((= head-idx -1) 0)
+      ((> head-idx tail-idx) (- (length (queue-array queue)) (- head-idx tail-idx) -1))
+      (t (- tail-idx head-idx -1)))))
 
 
 (defun queue-peek (queue)

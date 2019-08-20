@@ -38,3 +38,13 @@
     (queue-pop queue)
     (queue-pop queue)
     (5am:is (equal nil (queue-pop queue)))))
+
+
+(5am:test wrapped
+  (let ((queue (make-queue)))
+    (queue-push queue 111)
+    (queue-push queue 222)
+    (queue-pop queue)
+    (queue-push queue 333)
+    (5am:is (equal '(222 333) (loop for i below (queue-length queue)
+                                    collect (qref queue i))))))
