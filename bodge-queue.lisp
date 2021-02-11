@@ -7,7 +7,9 @@
            #:queue-length
            #:queue-peek
            #:queue-clear
-           #:qref))
+           #:qref
+	   #:queue-p
+	   #:queue))
 (cl:in-package :bodge-queue)
 
 
