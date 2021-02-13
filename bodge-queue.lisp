@@ -1,6 +1,7 @@
 (cl:defpackage :bodge-queue
   (:use :cl)
   (:export #:make-queue
+           #:queuep
            #:queue-push
            #:queue-pop
            #:queue-empty-p
@@ -135,3 +136,7 @@
   (setf (queue-head-idx queue) -1
         (queue-tail-idx queue) -1)
   (values))
+
+
+(defun queuep (queue)
+  (queue-p queue))
